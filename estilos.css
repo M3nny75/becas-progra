@@ -1,0 +1,272 @@
+/* ===== Variables de diseño =====
+   Idea de layout: barra superior, título y una cuadrícula de 2 x 2
+   con una tarjeta por beca. El color de la franja indica el tipo. */
+:root {
+  --fondo: #eef0f6;
+  --superficie: #ffffff;
+  --texto: #1a2140;
+  --texto-suave: #586080;
+  --marino: #1b2a6b;        /* barra y botones */
+  --sobre-marino: #ffffff;
+  --linea: #d6dae8;
+
+  /* Un color por tipo de beca */
+  --uanl: #2f5fd0;
+  --empresa: #c8452f;
+  --gobierno: #1f8a5b;
+
+  --fuente-titulo: "Archivo", "Arial Narrow", Arial, sans-serif;
+  --fuente-texto: "Public Sans", "Segoe UI", Arial, sans-serif;
+}
+
+/* Tema oscuro (según el sistema del visitante) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --fondo: #10142a;
+    --superficie: #1a2040;
+    --texto: #e9ecf8;
+    --texto-suave: #a3abc9;
+    --marino: #8fa6ff;
+    --sobre-marino: #10142a;
+    --linea: #2e3660;
+    --uanl: #7d9cf5;
+    --empresa: #f08a75;
+    --gobierno: #5fcf9c;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --fondo: #10142a;
+  --superficie: #1a2040;
+  --texto: #e9ecf8;
+  --texto-suave: #a3abc9;
+  --marino: #8fa6ff;
+  --sobre-marino: #10142a;
+  --linea: #2e3660;
+  --uanl: #7d9cf5;
+  --empresa: #f08a75;
+  --gobierno: #5fcf9c;
+}
+
+/* ===== Estilos base ===== */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: var(--fuente-texto);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.contenedor {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulo);
+  line-height: 1.15;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p, ul { margin: 0; }
+
+a:focus-visible {
+  outline: 3px solid var(--empresa);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ===== Barra superior ===== */
+.barra {
+  background: var(--marino);
+  color: var(--sobre-marino);
+}
+
+.barra-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.marca {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.menu a {
+  display: block;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: var(--sobre-marino);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ===== Presentación ===== */
+.presentacion { padding: 48px 0 32px; }
+
+.presentacion .contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.presentacion h1 {
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 800;
+}
+
+.entrada {
+  max-width: 62ch;
+  color: var(--texto-suave);
+  font-size: 1.15rem;
+}
+
+.leyenda {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.leyenda li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.punto {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.punto-uanl { background: var(--uanl); }
+.punto-empresa { background: var(--empresa); }
+.punto-gobierno { background: var(--gobierno); }
+
+/* ===== Tarjetas de becas ===== */
+.becas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding-bottom: 56px;
+}
+
+.beca {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 26px 26px 28px;
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-top: 8px solid var(--color-tipo);
+  border-radius: 8px;
+  scroll-margin-top: 16px;
+}
+
+/* Cada tipo de beca usa su propio color */
+.beca-uanl { --color-tipo: var(--uanl); }
+.beca-empresa { --color-tipo: var(--empresa); }
+.beca-gobierno { --color-tipo: var(--gobierno); }
+
+.tipo {
+  color: var(--color-tipo);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.beca h2 { font-size: 1.5rem; font-weight: 800; }
+
+.descripcion { color: var(--texto-suave); }
+
+.beca h3 {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.beca ul {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.beca li::marker { color: var(--color-tipo); }
+
+/* El botón se queda al fondo de la tarjeta */
+.boton {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 10px 18px;
+  background: var(--marino);
+  color: var(--sobre-marino);
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.beca p + .boton { margin-top: auto; }
+
+.boton:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Separación extra entre el último texto y el botón */
+.beca > p:last-of-type { margin-bottom: 14px; }
+
+/* ===== Pie de página ===== */
+.pie {
+  border-top: 1px solid var(--linea);
+  padding: 24px 0 40px;
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+.pie .contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ===== Adaptación a celular ===== */
+@media (max-width: 720px) {
+  .becas { grid-template-columns: 1fr; }
+  .presentacion { padding: 32px 0 24px; }
+  .beca { padding: 22px 20px 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

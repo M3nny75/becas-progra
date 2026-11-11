@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Becas universitarias</title>
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos de la página -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <!-- BARRA SUPERIOR -->
+  <header class="barra">
+    <div class="contenedor barra-contenido">
+      <p class="marca">Becas universitarias</p>
+      <nav aria-label="Tipos de beca">
+        <ul class="menu">
+          <li><a href="#escasos-recursos">UANL</a></li>
+          <li><a href="#santander">Empresas</a></li>
+          <li><a href="#congreso">Gobierno</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PRESENTACIÓN -->
+  <section class="presentacion">
+    <div class="contenedor">
+      <h1>Encuentra tu beca</h1>
+      <p class="entrada">Cuatro oportunidades para estudiantes de la UANL: dos becas de la universidad, una de una empresa privada y una del gobierno del estado.</p>
+      <ul class="leyenda">
+        <li><span class="punto punto-uanl"></span>Universidad</li>
+        <li><span class="punto punto-empresa"></span>Empresa privada</li>
+        <li><span class="punto punto-gobierno"></span>Gobierno</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LAS CUATRO BECAS -->
+  <main class="contenedor">
+    <div class="becas">
+
+      <!-- Beca 1 -->
+      <article class="beca beca-uanl" id="escasos-recursos">
+        <p class="tipo">Beca 1 · Universidad</p>
+        <h2>Beca de escasos recursos UANL</h2>
+        <p class="descripcion">Apoyo para estudiantes cuya familia tiene un ingreso total que no pasa de cinco salarios mínimos.</p>
+
+        <h3>Beneficio</h3>
+        <p>Apoyo en el pago de las cuotas escolares, de acuerdo con la situación económica de la familia.</p>
+
+        <h3>Requisitos</h3>
+        <ul>
+          <li>Llenar la solicitud de beca en SIASE.</li>
+          <li>Acta de nacimiento del estudiante.</li>
+          <li>Comprobante de domicilio.</li>
+          <li>Comprobantes de ingresos de padres o tutores.</li>
+          <li>No pagar el recibo de servicios escolares hasta terminar el trámite.</li>
+        </ul>
+
+        <h3>Cómo solicitarla</h3>
+        <p>En línea, desde el menú Becas de SIASE.</p>
+
+        <a class="boton" href="https://www.uanl.mx/tramites/becas-de-escasos-recursos/" target="_blank" rel="noopener">Ver requisitos en uanl.mx</a>
+      </article>
+
+      <!-- Beca 2 -->
+      <article class="beca beca-uanl" id="academica">
+        <p class="tipo">Beca 2 · Universidad</p>
+        <h2>Beca académica UANL</h2>
+        <p class="descripcion">Reconoce a los estudiantes con mejor promedio de su programa educativo.</p>
+
+        <h3>Beneficio</h3>
+        <p>Beca del 100&nbsp;% para estudiantes de preparatoria y licenciatura.</p>
+
+        <h3>Requisitos</h3>
+        <ul>
+          <li>Promedio de 85 o superior.</li>
+          <li>Estar entre los tres primeros lugares del grado anterior.</li>
+          <li>Llevar la carga académica completa.</li>
+          <li>Aprobar todas las materias en primera oportunidad.</li>
+        </ul>
+
+        <h3>Cómo solicitarla</h3>
+        <p>La facultad tramita la solicitud cada ciclo escolar.</p>
+
+        <a class="boton" href="https://www.uanl.mx/tramites/becas-academicas/" target="_blank" rel="noopener">Ver requisitos en uanl.mx</a>
+      </article>
+
+      <!-- Beca 3 -->
+      <article class="beca beca-empresa" id="santander">
+        <p class="tipo">Beca 3 · Empresa privada</p>
+        <h2>Beca Santander Manutención Primer Empleo 2026</h2>
+        <p class="descripcion">Para estudiantes del último año de universidad y egresados de los últimos dos años.</p>
+
+        <h3>Beneficio</h3>
+        <p>Apoyo económico único de $7,000 pesos. Se entregan 100 becas.</p>
+
+        <h3>Requisitos</h3>
+        <ul>
+          <li>Completar el curso de acceso directo en Santander Open Academy.</li>
+          <li>Kárdex con antigüedad no mayor a tres meses.</li>
+          <li>Credencial de estudiante vigente.</li>
+        </ul>
+
+        <h3>Cómo solicitarla</h3>
+        <p>Registro en Santander Open Academy del 14 de octubre al 14 de diciembre de 2026.</p>
+
+        <a class="boton" href="https://www.santander.com.mx/ceb/2026/becas-manutencion-primer-empleo.html" target="_blank" rel="noopener">Ver convocatoria de Santander</a>
+      </article>
+
+      <!-- Beca 4 -->
+      <article class="beca beca-gobierno" id="congreso">
+        <p class="tipo">Beca 4 · Gobierno</p>
+        <h2>Beca UANL – Congreso de Nuevo León</h2>
+        <p class="descripcion">Convenio entre la UANL y el Congreso del Estado para apoyar a estudiantes de escasos recursos.</p>
+
+        <h3>Beneficio</h3>
+        <p>Hasta 50&nbsp;% de la cuota de servicios escolares.</p>
+
+        <h3>Requisitos</h3>
+        <ul>
+          <li>Ser originario de Nuevo León.</li>
+          <li>Ser estudiante de primer ingreso o reingreso de preparatoria o licenciatura de la UANL.</li>
+          <li>Ser de escasos recursos.</li>
+        </ul>
+
+        <h3>Cómo solicitarla</h3>
+        <p>El trámite se hace a través del Congreso del Estado.</p>
+
+        <a class="boton" href="https://vidauniversitaria.uanl.mx/campus-uanl/uanl-y-congreso-fijan-requisitos-para-becas/" target="_blank" rel="noopener">Ver nota del convenio</a>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie">
+    <div class="contenedor">
+      <p>José Manuel Barraza Chapa · Programación Web</p>
+      <p>Información consultada en noviembre de 2026. Revisa siempre la convocatoria oficial antes de solicitar una beca.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
