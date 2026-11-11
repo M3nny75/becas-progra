@@ -254,6 +254,8 @@ a:focus-visible {
   font-size: 0.95rem;
 }
 
+.pie a { color: var(--marino); font-weight: 600; }
+
 .pie .contenedor {
   display: flex;
   flex-direction: column;
