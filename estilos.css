@@ -152,6 +152,23 @@ a:focus-visible {
   height: auto;
 }
 
+/* Imagen de la parte de arriba de cada tarjeta */
+.foto {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 650 / 273;  /* misma proporción en todas las tarjetas */
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+/* Los logos se muestran completos sobre fondo blanco */
+.foto-logo {
+  object-fit: contain;
+  background: #ffffff;
+  border: 1px solid var(--linea);
+}
+
 /* Icono de cada tarjeta */
 .icono {
   width: 56px;
