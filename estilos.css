@@ -130,10 +130,32 @@ a:focus-visible {
 /* ===== Presentación ===== */
 .presentacion { padding: 48px 0 32px; }
 
+/* Texto a la izquierda e ilustración a la derecha */
 .presentacion .contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.presentacion-texto {
+  flex: 1 1 380px;
   display: flex;
   flex-direction: column;
   gap: 14px;
+}
+
+.ilustracion {
+  flex: 0 1 280px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Icono de cada tarjeta */
+.icono {
+  width: 56px;
+  height: 56px;
 }
 
 .presentacion h1 {
